@@ -3,6 +3,10 @@
 // This program allows the user to input a message and it will return
 // all possible ways to write the message using only periodic table
 // symbols. Can print out only symbols or full element names.
+// If you ever want to reset the solved dictionary (the collection of words
+// the program will use to decompile a message), delete all entries
+// in SolvedDictionary.txt, and uncomment line 17 with the name
+// of the file to compile a new dictionary from in the quotes.
 
 import java.util.*;
 import java.io.*;
@@ -10,6 +14,7 @@ import java.io.*;
 public class PeriodicMessagesClient {
    public static void main(String[] args) throws FileNotFoundException {
       PeriodicMessageCompiler compiler = new PeriodicMessageCompiler();
+      //compiler.compile(new File(""));
       Scanner input = new Scanner(System.in);
       System.out.println("Type !encode to start encoding or !decode if you want to decode.");
       System.out.println();

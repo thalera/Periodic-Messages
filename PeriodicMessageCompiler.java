@@ -10,6 +10,7 @@ import java.io.*;
 
 public class PeriodicMessageCompiler {
    // name of solved dictionary to load upon instantiation
+   // to reset solved dictionary, delete all words inside of this file
    public static final String DICTIONARY = "SolvedDictionary.txt";
    // this is the map of symbols -> elements
    private Map<String, String> elements;
