@@ -9,7 +9,7 @@ import java.util.*;
 import java.io.*;
 
 public class PeriodicMessageCompiler {
-   // name of dictionary to load upon instantiation
+   // name of solved dictionary to load upon instantiation
    public static final String DICTIONARY = "SolvedDictionary.txt";
    // this is the map of symbols -> elements
    private Map<String, String> elements;
@@ -54,9 +54,10 @@ public class PeriodicMessageCompiler {
       System.out.println();
    }
    
+   // Pre: message is longer than 1 (outputs message in response)
    // Takes in a message and prints all possible combinations of elements
    // for that message as their symbols if symbols is true, or full
-   // element names if false. Message must be longer than 1 (outputs message else).
+   // element names if false. 
    // If no solutions are found, outputs a message saying so.
    public void printMessage(String s, boolean symbols) {
       if (s.length() <= 1) {
