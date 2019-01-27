@@ -21,3 +21,4 @@ placing the name of the dictionary you would like to compile answers for
 inside of the quotation marks. It is recommended that you recomment this
 line after doing this.
 
+If you're interested - the program uses recursive backtracking to find solutions.
