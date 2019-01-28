@@ -1,7 +1,7 @@
 # Periodic-Messages
 Create periodic messages like "Hi -> Hydrogen Iodine" using any message you'd like!
 The program can also do this in reverse, i.e. "Hydrogen Iodine -> Hi".
-The program finds all solutions for inputs.
+The program finds all solutions for the given input.
 
 Compile and Run PeriodicMessagesClient.java to use the program. From there you can choose
 whether you would like to encode or decode a message. To do so, type "!encode" or "!decode"
