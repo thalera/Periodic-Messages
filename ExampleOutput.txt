@@ -1,5 +1,5 @@
 Compiling previously solved words...
-3972 words loaded from the dictionary.
+3973 words loaded from the dictionary.
 
 Type !encode to start encoding or !decode if you want to decode.
 
@@ -9,55 +9,28 @@ Type !symbols if you wish to see periodic
 symbols instead of full element names,
 or type !decode to decode a message instead.
 
-Please enter your message: calculate sine of nine plus cosine of one
+Please enter your message: chocolate
 
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum copper lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium sulfur iodine neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon osmium iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt sulfur iodine neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur cobalt silicon neon oxygen fluorine oxygen neon.
-Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nitrogen iodine neon phosphorus lutetium sulfur carbon oxygen silicon neon oxygen fluorine oxygen neon.
+Carbon hydrogen oxygen carbon oxygen lanthanum tellurium.
+Carbon hydrogen oxygen cobalt lanthanum tellurium.
+Carbon holmium carbon oxygen lanthanum tellurium.
+Carbon holmium cobalt lanthanum tellurium.
+
+Please enter your message: father
+
+Fluorine astatine hydrogen erbium.
 
 Please enter your message: !decode
 
 Type !encode to encode a message instead.
 
-Please enter your message: Carbon aluminum carbon uranium lanthanum tellurium silicon neon oxygen fluorine nickel neon phosphorus lutetium sulfur carbon oxygen sulfur iodine neon oxygen fluorine oxygen neon.
+Please enter your message: Carbon hydrogen oxygen carbon oxygen lanthanum tellurium.
 
-Calculate sine of nine plus cosine of one.
+Chocolate.
+
+Please enter your message: Fluorine astatine hydrogen erbium.
+
+Fat her.
+Father.
 
 Please enter your message: 
