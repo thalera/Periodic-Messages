@@ -103,12 +103,15 @@ public class PeriodicMessageCompiler {
             // for each element in our word solution
             for (String word : solution) {
                // if it's symbols, then use the symbol instead
-               if (symbols) word = reverseElements.get(word);
+               if (symbols) {
+                  word = reverseElements.get(word);
+               }
+               // this is to capatalize the first word/each symbol
                if (first || symbols) {
                   word = word.substring(0 , 1).toUpperCase() + word.substring(1);
                   first = false;
                }
-               output += word + " ";
+               output += " " + word;
             }
          }
          System.out.println(output.trim() + ".");
@@ -177,7 +180,7 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // adds the given list to correspondning set of lists in the word solutions map
+   // adds the given list to corresponding set of lists in the word solutions map
    // and adds the word to the solved dictionary
    private void addSolution(String word, List<String> solution) {
       if (!wordSolutions.containsKey(word)) {
@@ -242,18 +245,15 @@ public class PeriodicMessageCompiler {
          System.out.println(results.get(0).trim() + ".");
       } else { // we did find a solution, yay!
          for (String result : results) {
-            result = result.substring(1, result.length() - 1).replace(",", "");
-            result = result.substring(0, 1).toUpperCase() + result.substring(1);
-            System.out.println(result + ".");
+            System.out.println(result);
          }
       }
    }
    
    // decompiles the given list of elements and outputs all solution to the
-   // given solutions list
-   // index: where we are at (start at 0)
-   // size: the length of the "substring" (start at 1)
-   // output: our current output string, as a list (pass new list)
+   // given solutions list. index is where we are currently at (start at 0),
+   // size is the length of the current "substring" (start at 1) and
+   // output if our current output sentence as a list (pass a new list)
    private void decompile(List<String> elements, int index, int size, List<String> current,
                           List<String> solutions) {
       // if there are still elements that need words
@@ -274,8 +274,13 @@ public class PeriodicMessageCompiler {
             decompile(elements, index, size + 1, current, solutions);
          }
       } else { // we've made a solution
-         // add it to our solutions ezpz
-         solutions.add(current.toString());
+         String firstWord = current.get(0);
+         String result = firstWord.substring(0, 1).toUpperCase() + firstWord.substring(1);
+         for (int i = 1; i < current.size(); i++) {
+            result += " " + current.get(i);
+         }
+         result += ".";
+         solutions.add(result);
       }
    }
    
