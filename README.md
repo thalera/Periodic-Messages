@@ -10,7 +10,7 @@ the words and their solutions that the program has saved in SolvedDictionary.txt
 You can use the commands at any time during the program to choose what you'd like
 to do. While encoding you can toggle the program printing out the messages as just
 element symbols or full element names by typing "!symbols". Any word that you enter
-that has a solution and that program does not already know will be added to
+that has a solution and that the program does not already know will be added to
 SolvedDictionary.txt.
 
 Included are two dictionary files, BigDictionary.txt and SmallDictionary.txt.
