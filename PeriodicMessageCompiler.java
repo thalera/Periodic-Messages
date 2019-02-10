@@ -1,34 +1,64 @@
-// Aidan Thaler
-// January 20th, 2019
-// This outlines a Periodic Message Compiler, which can take in a word
-// and figure out all the possible ways it can be written using
-// periodic symbols. Can display solutions for phrases and words
-// using periodic symbols or names. 
-
 import java.util.*;
 import java.io.*;
 
+/** 
+ * Aidan Thaler
+ * <br>January 20, 2019
+ *
+ * <p>Generates all elegrams for given words or phrases. Can decode elegrams
+ * back into words or phrases. Stores words with solutions in a file and
+ * can read {@code Collections} or {@code Files} and compile elegrams
+ * for words in them.
+ */
+
 public class PeriodicMessageCompiler {
-   // name of solved dictionary to load upon instantiation
-   // to reset solved dictionary, delete all words inside of this file
-   public static final String DICTIONARY = "SolvedDictionary.txt";
-   // this is the map of symbols -> elements
+
+   /**
+    * Name of previously solved dictionary to load.
+    */ 
+   public static final String DICTIONARY_NAME = "SolvedDictionary.txt";
+   
+   /**
+    * Name of file containing element symbols and names. Must be in format
+    * "[Symbol] [Name]", such as "He Helium". Case-insensitive.
+    */
+   public static final String ELEMENTS_NAME = "Elements.txt";
+   
+   /**
+    * Map from element symbols to element names.
+    */
    private Map<String, String> elements;
-   // this is a similar map to elements, except it goes elements -> symbols
+   
+   /**
+    * Map from element names to element symbols.
+    */
    private Map<String, String> reverseElements;
-   // this is the map of words -> solutions
-   // we store the solutions as a list so we can easily convert between symbols
-   // and names of the elements depending on what the user wants
+   
+   /**
+    * Map from words to their elegrams.
+    */
    private Map<String, Set<List<String>>> wordSolutions;
-   // this is a map of solutions -> words
+   
+   /**
+    * Map from elegrams to words. Elegrams are stored as ArrayList.toString().
+    */
    private Map<String, String> decodeSolutions;
-   // this is all words the compiler knows solutions to
+   
+   /**
+    * All words with real elegrams.
+    */
    private Set<String> dictionary;
    
-   // creates a new compiler and compiles all words in the dictionary file
+   /**
+    * Constructs a new PeriodicMessageCompiler and compiles all previously
+    * solved words.
+    *
+    * @throws FileNotFoundException if {@link ELEMENTS_NAME} or {@link DICTIONARY_NAME}
+    *         did not exist.
+    */
    public PeriodicMessageCompiler() throws FileNotFoundException {
       // add all the element symbols to the map
-      File elementFile = new File("Elements.txt");
+      File elementFile = new File(ELEMENTS_NAME);
       Scanner fileScanner = new Scanner(elementFile);
       elements = new HashMap<String, String>();
       reverseElements = new HashMap<String, String>();
@@ -40,7 +70,7 @@ public class PeriodicMessageCompiler {
       }
       // add all the old words to the set
       dictionary = new TreeSet<String>();
-      File dictFile = new File(DICTIONARY);
+      File dictFile = new File(DICTIONARY_NAME);
       fileScanner = new Scanner(dictFile);
       while (fileScanner.hasNext()) {
          dictionary.add(fileScanner.next());
@@ -55,11 +85,18 @@ public class PeriodicMessageCompiler {
       System.out.println();
    }
    
-   // Pre: message is longer than 1 (outputs message in response)
-   // Takes in a message and prints all possible combinations of elements
-   // for that message as their symbols if symbols is true, or full
-   // element names if false. 
-   // If no solutions are found, outputs a message saying so.
+   /**
+    * Finds and prints all possible elegrams for the s. If symbols, then it
+    * prints the elegrams using the element symbols, otherwise it prints them
+    * using the element names. If there are no possible solutions, it will
+    * print a message saying so. If s is an empty {@code String} or is a
+    * {@code String} of length 1, it will print a message saying to input
+    * a longer message.
+    *
+    * @param s the input to make an elegram for.
+    * @param symbols {@code true} true if printing element symbols instead of
+    *        element names.
+    */
    public void printMessage(String s, boolean symbols) {
       if (s.length() <= 1) {
          System.out.println("Please enter a longer message.");
@@ -83,19 +120,26 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // prints out all possible sentences using the given array of words. index is where we
-   // are starting at, and result is where the result is stored while building it.
-   // symbols is if we are printing out the symbols instead of the full words
+   /**
+    * Prints all possible elegrams for the {@code String[]} sentence. If there
+    * are no elegrams, it does nothing.
+    *
+    * @param sentence the sentence to convert to elegrams.
+    * @param index the current word we're printing solutions for.
+    * @param result where we are saving the elegram while we're building it.
+    * @param symbols {@code true} if printing element symbols instead of
+    *        element names.
+    */
    private void printAllSolutions(String[] sentence, int index, List<List<String>> result,
                                   boolean symbols) {
       if (index < sentence.length) {
-         // simple recursive backtracking loop to build all solutions
+         // recursive backtracking loop to build all solutions
          for (List<String> solution : wordSolutions.get(sentence[index])) {
             result.add(solution);
             printAllSolutions(sentence, index + 1, result, symbols);
             result.remove(result.size() - 1);
          }
-      } else {
+      } else if (index == sentence.length) {
          boolean first = true;
          String output = "";
          // for each word solution in our final sentence
@@ -118,8 +162,14 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // compiles a given text file
-   // returns number of successful solutions
+   /**
+    * Finds elegrams for all words in the {@code File} inputFile. Returns
+    * the total number of words with an elegram as an {@code int}.
+    *
+    * @param inputFile file to find elegrams for.
+    * @return total number of words with an elegram.
+    * @throws FileNotFoundException if inputFile doesn't exist.
+    */
    public int compile(File inputFile) throws FileNotFoundException {
       Scanner fileScanner = new Scanner(inputFile);
       int count = 0;
@@ -136,8 +186,13 @@ public class PeriodicMessageCompiler {
       return count;
    }
    
-   // compiles a given collection of words
-   // returns number of successful solutions
+   /**
+    * Finds elegrams for all words in the {@code Collection<String>} data.
+    * Returns the total number of words with an elegram as an {@code int}.
+    *
+    * @param data the words to find elegrams for.
+    * @return total number of words with an elegram.
+    */
    public int compile(Collection<String> data) {
       int count = 0;
       for (String word : data) {
@@ -149,28 +204,29 @@ public class PeriodicMessageCompiler {
       return count;
    }
    
-   // compiles a single given word into the periodic form and saves it to the given map
-   // with the key being the given word. index is the index we are currently at, size
-   // is the length of the current symbol, and current is our currently
-   // built list of elements
+   /**
+    * Finds all elegrams for the {@code String} word and saves them to the
+    * solutions {@code Map}s. If the word has an elegram and was not previously in
+    * the {@link DICTIONARY_NAME}, then it will be added.
+    *
+    * @param word the word to find elegrams for.
+    * @param index the index we are at.
+    * @param size the size of the substring we are solving.
+    * @param current a data structure to hold the elegram as we build it.
+    */
    private void compileWord(String word, int index, int size, List<String> current) {
       // if there are still letters that need elements
       if (index < word.length()) {
-         // create the key
          String key = "" + word.charAt(index);
          if (size == 2) {
             key += word.charAt(index + 1);
          }
-         // if the key is valid, great! go deeper
          if (elements.containsKey(key)) {
-            // add it to the list
             current.add(elements.get(key));
-            // continue on at the right index and repeat until no letters left
             compileWord(word, index + size, 1, current);
-            // remove this one
             current.remove(current.size() - 1);
          }
-         // if the length was one, we need to try it again but with two this time
+         // if the length was one, do it again but with length two
          if (size == 1 && index + 1 < word.length()) {
             compileWord(word, index, 2, current);
          }
@@ -180,34 +236,42 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // adds the given list to corresponding set of lists in the word solutions map
-   // and adds the word to the solved dictionary
+   /**
+    * Adds the {@code List<String>} solution and {@code String} word to the
+    * {@link wordSolutions} and {@link decodeSolutions}.
+    *
+    * @param word the word corresponding to the solution.
+    * @param solution the elegram corresponding to the word.
+    */
    private void addSolution(String word, List<String> solution) {
       if (!wordSolutions.containsKey(word)) {
          wordSolutions.put(word, new HashSet<List<String>>());
       }
-      List<String> solutionCopy = new ArrayList<String>();
-      solutionCopy.addAll(solution);
+      List<String> solutionCopy = new ArrayList<String>(solution);
       wordSolutions.get(word).add(solutionCopy);
       decodeSolutions.put(solution.toString(), word);
       addToDictionary(word);
    }
    
-   // adds the given word to the solved dictionary
+   /**
+    * Adds the {@code String} word to the {@link DICTIONARY_NAME} and {@link dictionary}.
+    */
    private void addToDictionary(String word) {
       if (!dictionary.contains(word)) {
          dictionary.add(word);
          try {
-            File dictFile = new File(DICTIONARY);
+         File dictFile = new File(DICTIONARY_NAME);
             PrintStream outputStrm = new PrintStream(new FileOutputStream(dictFile, true));
             outputStrm.println(word);
-         } catch (Exception e) {
-         
+         } catch (FileNotFoundException e) {
+
          }
       }
    }
    
-   // prints out all words this compiler has solved and their solutions
+   /**
+    * Prints all words and elegrams that have been solved.
+    */
    public void printAll() {
       for (String word :  dictionary) {
          System.out.print(word + ": ");
@@ -218,9 +282,16 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // takes a string of element names and returns it as the original word(s) if
-   // it knows it. Otherwise it will return it as periodic symbols. If a 
-   // non-elemental name is passed in, it will remain unchanged.
+   /**
+    * Takes the {@code String} s elegram of element names and prints it as
+    * all possible English sentences. If it can't find a sentence with words
+    * that align with the elements, it instead replaces the elements in the
+    * elegram with their periodic symbols and prints that. If the s contains
+    * a word that is not the name of an element, that word will remain
+    * unchanged.
+    *
+    * @param s the elegram made of element names to decode.
+    */
    public void decodeMessage(String s) {
       // make an array of each word put that into a list
       String[] words = s.toLowerCase().split("\\W+");
@@ -250,10 +321,16 @@ public class PeriodicMessageCompiler {
       }
    }
    
-   // decompiles the given list of elements and outputs all solution to the
-   // given solutions list. index is where we are currently at (start at 0),
-   // size is the length of the current "substring" (start at 1) and
-   // output if our current output sentence as a list (pass a new list)
+   /**
+    * Decompiles the {@code List<String>} elements back into English and stores
+    * all possible solutions in the {@code List<String>} solutions.
+    *
+    * @param elements the elegram to decode.
+    * @param index where we are currently at in the elegram.
+    * @param size how many elements we are considering in our current word.
+    * @param current where we are building the elegrams.
+    * @param solutions where we are storing the elegrams. 
+    */
    private void decompile(List<String> elements, int index, int size, List<String> current,
                           List<String> solutions) {
       // if there are still elements that need words

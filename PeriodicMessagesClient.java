@@ -1,15 +1,13 @@
-// Aidan Thaler
-// January 20th, 2019
-// This program allows the user to input a message and it will return
-// all possible ways to write the message using only periodic table
-// symbols. Can print out only symbols or full element names.
-// If you ever want to reset the solved dictionary (the collection of words
-// the program will use to decompile a message), delete all entries
-// in SolvedDictionary.txt, and uncomment line 17 with the name
-// of the file to compile a new dictionary from in the quotes.
-
 import java.util.*;
 import java.io.*;
+
+/** 
+ * Aidan Thaler
+ * <br>January 20, 2019
+ *
+ * <p>Takes in user-inputted words and phrases and compiles them into
+ * the same message written using element names/symbols (AKA an elegram).
+ */
 
 public class PeriodicMessagesClient {
    public static void main(String[] args) throws FileNotFoundException {
@@ -42,7 +40,12 @@ public class PeriodicMessagesClient {
       }
    } 
    
-   // allows the user to encode messages
+   /**
+    * Allows the user to input messages and encode them into elegrams.
+    *
+    * @param input Scanner to interact with the user.
+    * @param compiler compiler to use.
+    */
    public static void encode(Scanner input, PeriodicMessageCompiler compiler) {
       System.out.println("Type !symbols if you wish to see periodic");
       System.out.println("symbols instead of full element names,");
@@ -79,7 +82,12 @@ public class PeriodicMessagesClient {
       }
    }
    
-   // allows the user to decode messages
+    /**
+    * Allows the user to input elegrams and decode them into messages.
+    *
+    * @param input user's input.
+    * @param compiler compiler to use.
+    */
    public static void decode(Scanner input, PeriodicMessageCompiler compiler) {
       System.out.println("Type !encode to encode a message instead.");
       System.out.println();
@@ -103,7 +111,12 @@ public class PeriodicMessagesClient {
 
    }
    
-   // gets a message from the user and returns it
+   /**
+    * Prompts the user for a message and returns their input.
+    *
+    * @param input user's input.
+    * @return the user's message.
+    */
    public static String getMessage(Scanner input) {
       System.out.print("Please enter your message: ");
       return input.nextLine().trim();
