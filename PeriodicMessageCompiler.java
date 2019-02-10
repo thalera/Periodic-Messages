@@ -255,6 +255,8 @@ public class PeriodicMessageCompiler {
    
    /**
     * Adds the {@code String} word to the {@link DICTIONARY_NAME} and {@link dictionary}.
+    *
+    * @param word the word to add to the dictionary.
     */
    private void addToDictionary(String word) {
       if (!dictionary.contains(word)) {
