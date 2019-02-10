@@ -19,8 +19,8 @@ public class PeriodicMessageCompiler {
    public static final String DICTIONARY_NAME = "SolvedDictionary.txt";
    
    /**
-    * Name of file containing element symbols and names. Must be in format
-    * "[Symbol] [Name]", such as "He Helium". Case-insensitive.
+    * Name of file containing element symbols and names. File must be in the
+    * format "[Symbol] [Name]", such as "He Helium O Oxygen". Case-insensitive.
     */
    public static final String ELEMENTS_NAME = "Elements.txt";
    
@@ -206,8 +206,9 @@ public class PeriodicMessageCompiler {
    
    /**
     * Finds all elegrams for the {@code String} word and saves them to the
-    * solutions {@code Map}s. If the word has an elegram and was not previously in
-    * the {@link DICTIONARY_NAME}, then it will be added.
+    * {@link wordSolutions} and {@link decodeSolutions}. If the word has an
+    * elegram and was not previously in the {@link DICTIONARY_NAME}, then it
+    * will be added to it.
     *
     * @param word the word to find elegrams for.
     * @param index the index we are at.
