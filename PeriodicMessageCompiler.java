@@ -263,7 +263,7 @@ public class PeriodicMessageCompiler {
       if (!dictionary.contains(word)) {
          dictionary.add(word);
          try {
-         File dictFile = new File(DICTIONARY_NAME);
+            File dictFile = new File(DICTIONARY_NAME);
             PrintStream outputStrm = new PrintStream(new FileOutputStream(dictFile, true));
             outputStrm.println(word);
          } catch (FileNotFoundException e) {
