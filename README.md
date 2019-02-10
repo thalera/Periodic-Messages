@@ -1,5 +1,5 @@
 # Periodic-Messages
-Create periodic messages like "Hi -> Hydrogen Iodine" using any message you'd like!
+Create periodic messages (AKA elegrams) like "Hi -> Hydrogen Iodine" using any message you'd like!
 The program can also do this in reverse, i.e. "Hydrogen Iodine -> Hi".
 The program finds all solutions for the given input.
 
@@ -18,7 +18,7 @@ SolvedDictionary.txt.
 Included are two dictionary files, BigDictionary.txt and SmallDictionary.txt.
 By default, SolvedDictionary.txt is the solutions from SmallDictionary.txt. You
 can change this by deleting all entries in SolvedDictionary.txt (do not delete
-the file itself) and uncommenting line 17 of PeriodicMessagesClient.java and
+the file itself), uncommenting line 15 of PeriodicMessagesClient.java and
 placing the name of the dictionary you would like to compile answers for
 inside of the quotation marks. It is recommended that you recomment this
 line after doing this.
